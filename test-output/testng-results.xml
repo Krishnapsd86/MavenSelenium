@@ -1,33 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-04-27T20:43:21 CDT" name="Suite" finished-at="2023-04-27T20:43:21 CDT" duration-ms="54">
+  <suite started-at="2023-04-27T22:03:34 CDT" name="Default suite" finished-at="2023-04-27T22:03:39 CDT" duration-ms="4746">
     <groups>
     </groups>
-    <test started-at="2023-04-27T20:43:21 CDT" name="Test" finished-at="2023-04-27T20:43:21 CDT" duration-ms="54">
-      <class name="TestMaven1.Maven6">
-        <test-method signature="testcaseOne(java.lang.String,java.lang.String)[pri:0, instance:TestMaven1.Maven6@1d9b7cce]" started-at="2023-04-27T20:43:21 CDT" name="testcaseOne" finished-at="2023-04-27T20:43:21 CDT" duration-ms="11" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[UserName]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[PassworD]]>
-              </value>
-            </param>
-          </params>
+    <test started-at="2023-04-27T22:03:34 CDT" name="Default test" finished-at="2023-04-27T22:03:39 CDT" duration-ms="4746">
+      <class name="TestMaven1.ClassActivities">
+        <test-method signature="SauceDemo()[pri:0, instance:TestMaven1.ClassActivities@441772e]" started-at="2023-04-27T22:03:34 CDT" name="SauceDemo" finished-at="2023-04-27T22:03:39 CDT" duration-ms="4704" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testcaseOne -->
-        <test-method signature="testcaseTwo()[pri:0, instance:TestMaven1.Maven6@1d9b7cce]" started-at="2023-04-27T20:43:21 CDT" name="testcaseTwo" finished-at="2023-04-27T20:43:21 CDT" duration-ms="2" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testcaseTwo -->
-      </class> <!-- TestMaven1.Maven6 -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+        </test-method> <!-- SauceDemo -->
+      </class> <!-- TestMaven1.ClassActivities -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
