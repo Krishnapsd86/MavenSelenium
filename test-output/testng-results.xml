@@ -1,47 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-04-26T20:41:46 CDT" name="Suite" finished-at="2023-04-26T20:41:46 CDT" duration-ms="56">
+  <suite started-at="2023-04-27T20:43:21 CDT" name="Suite" finished-at="2023-04-27T20:43:21 CDT" duration-ms="54">
     <groups>
     </groups>
-    <test started-at="2023-04-26T20:41:46 CDT" name="Test" finished-at="2023-04-26T20:41:46 CDT" duration-ms="56">
-      <class name="TestMaven1.Maven2">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestMaven1.Maven2@661972b0]" started-at="2023-04-26T20:41:46 CDT" name="beforeMethod" finished-at="2023-04-26T20:41:46 CDT" duration-ms="0" status="PASS">
+    <test started-at="2023-04-27T20:43:21 CDT" name="Test" finished-at="2023-04-27T20:43:21 CDT" duration-ms="54">
+      <class name="TestMaven1.Maven6">
+        <test-method signature="testcaseOne(java.lang.String,java.lang.String)[pri:0, instance:TestMaven1.Maven6@1d9b7cce]" started-at="2023-04-27T20:43:21 CDT" name="testcaseOne" finished-at="2023-04-27T20:43:21 CDT" duration-ms="11" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[UserName]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[PassworD]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="loginTest()[pri:1, instance:TestMaven1.Maven2@661972b0]" started-at="2023-04-26T20:41:46 CDT" name="loginTest" finished-at="2023-04-26T20:41:46 CDT" duration-ms="2" status="PASS">
+        </test-method> <!-- testcaseOne -->
+        <test-method signature="testcaseTwo()[pri:0, instance:TestMaven1.Maven6@1d9b7cce]" started-at="2023-04-27T20:43:21 CDT" name="testcaseTwo" finished-at="2023-04-27T20:43:21 CDT" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginTest -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestMaven1.Maven2@661972b0]" started-at="2023-04-26T20:41:46 CDT" name="afterMethod" finished-at="2023-04-26T20:41:46 CDT" duration-ms="2" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestMaven1.Maven2@661972b0]" started-at="2023-04-26T20:41:46 CDT" name="beforeMethod" finished-at="2023-04-26T20:41:46 CDT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="loginTest2()[pri:1, instance:TestMaven1.Maven2@661972b0]" started-at="2023-04-26T20:41:46 CDT" name="loginTest2" finished-at="2023-04-26T20:41:46 CDT" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginTest2 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestMaven1.Maven2@661972b0]" started-at="2023-04-26T20:41:46 CDT" name="afterMethod" finished-at="2023-04-26T20:41:46 CDT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-      </class> <!-- TestMaven1.Maven2 -->
-      <class name="TestMaven1.Maven1">
-        <test-method signature="LoginTest()[pri:1, instance:TestMaven1.Maven1@5fdcaa40]" started-at="2023-04-26T20:41:46 CDT" name="LoginTest" finished-at="2023-04-26T20:41:46 CDT" duration-ms="10" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LoginTest -->
-        <test-method signature="LogoutTest()[pri:2, instance:TestMaven1.Maven1@5fdcaa40]" started-at="2023-04-26T20:41:46 CDT" name="LogoutTest" finished-at="2023-04-26T20:41:46 CDT" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LogoutTest -->
-      </class> <!-- TestMaven1.Maven1 -->
+        </test-method> <!-- testcaseTwo -->
+      </class> <!-- TestMaven1.Maven6 -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>
