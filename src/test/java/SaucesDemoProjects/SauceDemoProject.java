@@ -1,8 +1,11 @@
 package SaucesDemoProjects;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
+import org.junit.After;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,6 +13,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 public class SauceDemoProject {
@@ -43,20 +48,31 @@ public class SauceDemoProject {
 
 	// verify number all items in navigation bar
 	public void ProductPage() {
+		
+		ArrayList<String> AllList = new ArrayList<String>();
 		List<WebElement> TotalItem = driver.findElements(By.cssSelector(".inventory_item_name"));
-		System.out.println(TotalItem.size());
-//		for (int i = 0; i < TotalItem.size(); i++) {
-//			
-//			
-//		}
-		Assert.assertEquals(TotalItem.size(), 6);
+		for (int i = 0; i < TotalItem.size(); i++) {
+			AllList.add(TotalItem.get(i).getText());	
+		}
+		ArrayList<String> matchList = new ArrayList<String>();   
+		for(String s:AllList){
+			matchList.add(s);
+		}
+		
+		Assert.assertTrue(AllList.equals(matchList));
 
 		driver.findElement(By.cssSelector("#react-burger-menu-btn")).click();
+		ArrayList<String> NavList = new ArrayList<String>();
 		List<WebElement> ItemsDisplay = driver.findElements(By.cssSelector("a[class='bm-item menu-item']"));
 		for (int i = 0; i < ItemsDisplay.size(); i++) {
-			ItemsDisplay.get(i).getText();
+			NavList.add(ItemsDisplay.get(i).getText());
 		}
-		Assert.assertEquals(ItemsDisplay.size(), 4);
+		ArrayList<String> DisplayItem = new ArrayList<String>();
+		for(String s:NavList) {
+			DisplayItem.add(s);
+		}
+		Assert.assertTrue(NavList.equals(DisplayItem));
+		
 	}
 
 	// verify the filter
@@ -66,37 +82,66 @@ public class SauceDemoProject {
 		WebElement filter = driver.findElement(By.cssSelector(".product_sort_container"));
 		Select option = new Select(filter);
 		WebElement AtoZ = driver.findElement(By.xpath("//*[@class=\"select_container\"]/select/option[1]"));
-		AtoZ.click();
-		List<WebElement> defaultList = driver.findElements(By.cssSelector(".inventory_item_name"));
-		for (int i = 0; i < defaultList.size(); i++) {
-			String List = defaultList.get(i).getText();
-		}		
+		AtoZ.click();		 
+		ArrayList<String> obtainedList = new ArrayList<String>();
+		List<WebElement> elementList = driver.findElements(By.cssSelector(".inventory_item_name"));
+		for(WebElement we:elementList){
+			   obtainedList.add(we.getText());
+			}
+		ArrayList<String> sortedList = new ArrayList<String>();   
+		for(String s:obtainedList){
+		sortedList.add(s);
+		}
+		Collections.sort(sortedList);
+		Assert.assertTrue(sortedList.equals(obtainedList));
+			
 		WebElement ZtoA = driver.findElement(By.xpath("//*[@class=\"select_container\"]/select/option[2]"));
 		ZtoA.click();
-		List<WebElement> secondList = driver.findElements(By.cssSelector(".inventory_item_name"));
-		for (int i = 0; i < secondList.size(); i++) {
-			String second = secondList.get(i).getText();
+		ArrayList<String> obtainedList1 = new ArrayList<String>();
+		List<WebElement> elementList1 = driver.findElements(By.cssSelector(".inventory_item_name"));
+		for(WebElement we:elementList1){
+			   obtainedList1.add(we.getText());
+			}
+		ArrayList<String> sortedList1 = new ArrayList<String>();   
+		for(String s:obtainedList1){
+		sortedList1.add(s);
 		}
-		
-		Assert.assertNotSame(defaultList, secondList);
+		Collections.sort(sortedList1);
+		Collections.reverse(sortedList1);
+		Assert.assertTrue(sortedList1.equals(obtainedList1));
+
 		
 		WebElement LowToHigh = driver.findElement(By.xpath("//*[@class=\"select_container\"]/select/option[3]"));
 		LowToHigh.click();
-		// option.selectByIndex(2);
-		List<WebElement> thirdList = driver.findElements(By.cssSelector(".inventory_item_name"));
-		for (int i = 0; i < thirdList.size(); i++) {
-			String third = thirdList.get(i).getText();
+		ArrayList<String> obtainedList2 = new ArrayList<String>();
+		List<WebElement> elementList2 = driver.findElements(By.cssSelector(".inventory_item_name"));
+		for(WebElement we:elementList2){
+			   obtainedList2.add(we.getText());
+			}
+		ArrayList<String> sortedList2 = new ArrayList<String>();   
+		for(String s:obtainedList2){
+		sortedList2.add(s);
 		}
+		Collections.sort(sortedList2);
+		Collections.reverse(sortedList2);
+		Assert.assertNotEquals(obtainedList2, sortedList2);
 		
 		WebElement HighToLow = driver.findElement(By.xpath("//*[@class=\"select_container\"]/select/option[4]"));
 		HighToLow.click();
-		// option.selectByIndex(3);
-		List<WebElement> forthList = driver.findElements(By.cssSelector(".inventory_item_name"));
-		for (int i = 0; i < forthList.size(); i++) {
-			String four = forthList.get(i).getText();
+		ArrayList<String> obtainedList3 = new ArrayList<String>();
+		List<WebElement> elementList3 = driver.findElements(By.cssSelector(".inventory_item_name"));
+		for(WebElement we:elementList3){
+			   obtainedList3.add(we.getText());
+			}
+		ArrayList<String> sortedList3 = new ArrayList<String>();   
+		for(String s:obtainedList3){
+		sortedList3.add(s);
 		}
+		Collections.sort(sortedList3);
+		Collections.reverse(sortedList3);
+		Assert.assertNotEquals(obtainedList3, sortedList3);
 		
-		Assert.assertNotSame(thirdList, forthList);
+	
 
 	}
 
@@ -104,6 +149,7 @@ public class SauceDemoProject {
 	
 	@Test(dependsOnMethods = { "productFilter" })
 	public void addToCart() throws InterruptedException {
+		
 		List<WebElement> addButton = driver.findElements(By.cssSelector("button[class*='btn btn_primary']"));
 		String beforeClick = addButton.get(0).getText();
 		System.out.println("Before Adding : "+beforeClick);
@@ -163,7 +209,7 @@ public class SauceDemoProject {
 		Assert.assertEquals(sum, totalSummary);
 		
 		
-		
+		// verify the complete order flow
 		driver.findElement(By.id("finish")).click();
 		WebElement ConfirmationMsg = driver.findElement(By.cssSelector(".complete-header"));
 		String ConMsgs = ConfirmationMsg.getText();
@@ -172,8 +218,11 @@ public class SauceDemoProject {
 		
 	}
 
+	@AfterTest
+	public void TearDown() {
+		driver.close();
+	}
 	
-	// verify the complete order flow
 	
 
 }

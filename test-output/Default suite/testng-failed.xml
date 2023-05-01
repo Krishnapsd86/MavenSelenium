@@ -5,6 +5,7 @@
     <classes>
       <class name="SaucesDemoProjects.SauceDemoProject">
         <methods>
+          <include name="TearDown"/>
           <include name="productFilter"/>
           <include name="CheckOutPage"/>
           <include name="addToCart"/>
