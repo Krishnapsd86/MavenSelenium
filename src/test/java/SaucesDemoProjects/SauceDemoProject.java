@@ -11,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -149,15 +150,22 @@ public class SauceDemoProject {
 	
 	@Test(dependsOnMethods = { "productFilter" })
 	public void addToCart() throws InterruptedException {
-		
+	
+		Actions act = new Actions(driver);
 		List<WebElement> addButton = driver.findElements(By.cssSelector("button[class*='btn btn_primary']"));
 		String beforeClick = addButton.get(0).getText();
+		
 		System.out.println("Before Adding : "+beforeClick);
-		for (int i = 0; i < addButton.size(); i++) {
+		for (int i = 2; i < addButton.size(); i++) {
+			
 			addButton.get(i).click();
 		}
+		Thread.sleep(3000);
+		WebElement afterClick =driver.findElement(By.cssSelector("button[class*='btn btn_secondary']"));
+		String AfterClick = afterClick.getText();
+		System.out.println("After Adding : "+AfterClick);
 
-		Assert.assertNotEquals("Remove", beforeClick);
+		Assert.assertNotEquals(AfterClick, beforeClick);
 		
 		driver.findElement(By.cssSelector(".shopping_cart_link")).click();
 		List<WebElement> CartProduct = driver.findElements(By.xpath("//div[@class='cart_list']"));
