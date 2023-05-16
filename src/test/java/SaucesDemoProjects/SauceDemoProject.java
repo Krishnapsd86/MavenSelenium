@@ -5,16 +5,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import org.junit.After;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
@@ -70,7 +67,7 @@ public class SauceDemoProject {
 		}
 		ArrayList<String> DisplayItem = new ArrayList<String>();
 		for(String s:NavList) {
-			DisplayItem.add(s);
+			DisplayItem.add(s); 
 		}
 		Assert.assertTrue(NavList.equals(DisplayItem));
 		
@@ -151,7 +148,7 @@ public class SauceDemoProject {
 	@Test(dependsOnMethods = { "productFilter" })
 	public void addToCart() throws InterruptedException {
 	
-		Actions act = new Actions(driver);
+		//Actions act = new Actions(driver);
 		List<WebElement> addButton = driver.findElements(By.cssSelector("button[class*='btn btn_primary']"));
 		String beforeClick = addButton.get(0).getText();
 		
@@ -168,12 +165,20 @@ public class SauceDemoProject {
 		Assert.assertNotEquals(AfterClick, beforeClick);
 		
 		driver.findElement(By.cssSelector(".shopping_cart_link")).click();
+		
 		List<WebElement> CartProduct = driver.findElements(By.xpath("//div[@class='cart_list']"));
-		for (int i = 0; i < CartProduct.size(); i++) {
-			String AddedInCart = CartProduct.get(i).getText();
-			//System.out.println(AddedInCart);
+		ArrayList<String> addedAtCart = new ArrayList<String>();
+		System.out.println(addedAtCart);
+		for (WebElement  li: CartProduct) {
+			addedAtCart.add(li.getText());
 		}
-		Assert.assertEquals(CartProduct.size(),CartProduct.size());
+		ArrayList<String> sort = new ArrayList<String>();   
+		for(String s:addedAtCart){
+			sort.add(s);
+		}
+		System.out.println(sort);
+		
+		Assert.assertEquals(addedAtCart.size(),sort.size());
 		
 		driver.findElement(By.id("checkout")).click();
 

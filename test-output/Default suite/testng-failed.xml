@@ -3,14 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="SaucesDemoProjects.SauceDemoProject">
+      <class name="SaucesDemoProjects.JqureyUi">
         <methods>
-          <include name="TearDown"/>
-          <include name="productFilter"/>
-          <include name="CheckOutPage"/>
-          <include name="addToCart"/>
+          <include name="ValidateDragDrop"/>
+          <include name="ValidationJqurey"/>
         </methods>
-      </class> <!-- SaucesDemoProjects.SauceDemoProject -->
+      </class> <!-- SaucesDemoProjects.JqureyUi -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

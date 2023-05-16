@@ -2,32 +2,32 @@
 <testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-05-01T22:27:16 CDT" name="Default suite" finished-at="2023-05-01T22:27:23 CDT" duration-ms="7146">
+  <suite started-at="2023-05-07T21:27:21 CDT" name="Default suite" finished-at="2023-05-07T21:27:32 CDT" duration-ms="11123">
     <groups>
     </groups>
-    <test started-at="2023-05-01T22:27:16 CDT" name="Default test" finished-at="2023-05-01T22:27:23 CDT" duration-ms="7146">
+    <test started-at="2023-05-07T21:27:21 CDT" name="Default test" finished-at="2023-05-07T21:27:32 CDT" duration-ms="11123">
       <class name="SaucesDemoProjects.SauceDemoProject">
-        <test-method signature="Login()[pri:0, instance:SaucesDemoProjects.SauceDemoProject@3a93b025]" started-at="2023-05-01T22:27:16 CDT" name="Login" finished-at="2023-05-01T22:27:18 CDT" duration-ms="2441" status="PASS">
+        <test-method signature="Login()[pri:0, instance:SaucesDemoProjects.SauceDemoProject@3a93b025]" started-at="2023-05-07T21:27:21 CDT" name="Login" finished-at="2023-05-07T21:27:28 CDT" duration-ms="6321" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method signature="productFilter()[pri:0, instance:SaucesDemoProjects.SauceDemoProject@3a93b025]" started-at="2023-05-01T22:27:18 CDT" name="productFilter" finished-at="2023-05-01T22:27:19 CDT" duration-ms="492" status="PASS">
+        <test-method signature="productFilter()[pri:0, instance:SaucesDemoProjects.SauceDemoProject@3a93b025]" started-at="2023-05-07T21:27:28 CDT" name="productFilter" finished-at="2023-05-07T21:27:28 CDT" duration-ms="472" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- productFilter -->
-        <test-method signature="ProductPage()[pri:0, instance:SaucesDemoProjects.SauceDemoProject@3a93b025]" started-at="2023-05-01T22:27:19 CDT" name="ProductPage" finished-at="2023-05-01T22:27:19 CDT" duration-ms="170" status="PASS">
+        <test-method signature="ProductPage()[pri:0, instance:SaucesDemoProjects.SauceDemoProject@3a93b025]" started-at="2023-05-07T21:27:28 CDT" name="ProductPage" finished-at="2023-05-07T21:27:28 CDT" duration-ms="220" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ProductPage -->
-        <test-method signature="addToCart()[pri:0, instance:SaucesDemoProjects.SauceDemoProject@3a93b025]" started-at="2023-05-01T22:27:19 CDT" name="addToCart" finished-at="2023-05-01T22:27:22 CDT" depends-on-methods="SaucesDemoProjects.SauceDemoProject.productFilter" duration-ms="3357" status="PASS">
+        <test-method signature="addToCart()[pri:0, instance:SaucesDemoProjects.SauceDemoProject@3a93b025]" started-at="2023-05-07T21:27:28 CDT" name="addToCart" finished-at="2023-05-07T21:27:32 CDT" depends-on-methods="SaucesDemoProjects.SauceDemoProject.productFilter" duration-ms="3422" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addToCart -->
-        <test-method signature="CheckOutPage()[pri:0, instance:SaucesDemoProjects.SauceDemoProject@3a93b025]" started-at="2023-05-01T22:27:22 CDT" name="CheckOutPage" finished-at="2023-05-01T22:27:23 CDT" depends-on-methods="SaucesDemoProjects.SauceDemoProject.addToCart" duration-ms="499" status="PASS">
+        <test-method signature="CheckOutPage()[pri:0, instance:SaucesDemoProjects.SauceDemoProject@3a93b025]" started-at="2023-05-07T21:27:32 CDT" name="CheckOutPage" finished-at="2023-05-07T21:27:32 CDT" depends-on-methods="SaucesDemoProjects.SauceDemoProject.addToCart" duration-ms="529" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckOutPage -->
-        <test-method is-config="true" signature="TearDown()[pri:0, instance:SaucesDemoProjects.SauceDemoProject@3a93b025]" started-at="2023-05-01T22:27:23 CDT" name="TearDown" finished-at="2023-05-01T22:27:23 CDT" duration-ms="139" status="PASS">
+        <test-method is-config="true" signature="TearDown()[pri:0, instance:SaucesDemoProjects.SauceDemoProject@3a93b025]" started-at="2023-05-07T21:27:32 CDT" name="TearDown" finished-at="2023-05-07T21:27:32 CDT" duration-ms="114" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TearDown -->
